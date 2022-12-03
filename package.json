@@ -9,7 +9,8 @@
     "dev:port": "vite --port 3000",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "electron:dev": "electron ."
+    "electron:dev": "electron .",
+    "electron:vite": "node scripts/dev.js"
   },
   "dependencies": {
     "vue": "^3.2.41"
