@@ -6,6 +6,7 @@
   "main": "electron/main.cjs",
   "scripts": {
     "dev": "vite",
+    "dev:port": "vite --port 3000",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "electron:dev": "electron ."

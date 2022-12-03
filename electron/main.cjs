@@ -26,7 +26,7 @@ async function createWindow() {
     if (app.isPackaged) {
         win.loadFile(join(__dirname, '../dist/index.html'))
     } else {
-        // Vite's dev server
+        // Vite's dev server (by default port is 5173, but can be changed in config)
         win.loadURL('http://localhost:5173')
         win.webContents.openDevTools()
     }
