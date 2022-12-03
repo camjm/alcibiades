@@ -17,7 +17,7 @@ async function createWindow() {
         width: 1024,
         height: 768,
         webPreferences: {
-            // preload: join(__dirname, '../electron/preload.cjs'),
+            preload: join(__dirname, '../electron/preload.cjs'),
             // contextIsolation: false,
             nodeIntegration: true
         }
