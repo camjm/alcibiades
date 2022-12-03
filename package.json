@@ -3,6 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "An electron app using Vite and Vue",
+  "repository": { 
+    "type": "git",
+    "url": "https://github.com/camjm/alcibiades.git"
+  },
+  "keywords": [
+    "Electron",
+    "Vite",
+    "Vue"
+  ],
   "main": "electron/main.cjs",
   "scripts": {
     "dev": "vite",
