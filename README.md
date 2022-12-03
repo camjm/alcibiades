@@ -15,7 +15,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
 
-## Tutorial
+## Setup
 Convert a vite project to an electron app with no boilerplate, all electron logic contained in the electron subdirectory.
 
 * `npm create vite@latest` use vite preset template
@@ -24,3 +24,10 @@ Convert a vite project to an electron app with no boilerplate, all electron logi
 * create the electron subdirectory
 * `npm run dev` then `npm run electron:dev` to run electron app
 * Or: `npm run electron:vite`, which does both commands
+
+
+## Build
+`npm run electron:build`
+Runs the vite build first, then the electron build
+* vite's build is located in the dist subdirectory by default
+* electron's build is located in the release subdirectory

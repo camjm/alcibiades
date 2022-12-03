@@ -7,5 +7,9 @@ export default defineConfig({
   //   port: 3000,
   //   strictPort: true
   // },
+  // build: {
+  //   outDir: 'dist'
+  // },
+  base: './', // prefixes all assets with ./ to work with electron's file:// protocol
   plugins: [vue()]
 })
