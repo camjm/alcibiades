@@ -14,3 +14,13 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+## Tutorial
+Convert a vite project to an electron app with no boilerplate, all electron logic contained in the electron subdirectory.
+
+* `npm create vite@latest` use vite preset template
+* `npm install`
+* `npm i -D electron@latest` add electron to it as a dev dependency
+* create the electron subdirectory
+* `npm run dev` then `npm run electron:dev` to run electron app
+* Or: `npm run electron:vite`, which does both commands
