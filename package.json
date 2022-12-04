@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "description": "An electron app using Vite and Vue",
+  "author": {
+    "name": "camjm",
+    "email": "2276730+camjm@users.noreply.github.com"
+  },
   "repository": { 
     "type": "git",
     "url": "https://github.com/camjm/alcibiades.git"

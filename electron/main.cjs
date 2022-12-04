@@ -1,8 +1,12 @@
 // extension is .cjs to indicate it is a CommonJS module
 // package.json has a type of 'module', so all .js files are ESM by default
 
+//Node.js uses CommonJS modules
 const { app, BrowserWindow, shell } = require('electron')
 const { join } = require('path')
+
+// app module controls the application's event lifecycle.
+// BrowserWindow module creates and manages application windows.
 
 if (!app.requestSingleInstanceLock()) {
     app.quit()
@@ -12,6 +16,7 @@ if (!app.requestSingleInstanceLock()) {
 let win = null
 
 async function createWindow() {
+    // __dirname points to the path of the currently executing script (different when in development or packaged mode)
     win = new BrowserWindow({
         title: 'Main Window',
         width: 1024,
@@ -36,8 +41,9 @@ app.whenReady().then(() => {
     // only create window when electron app is ready
     createWindow()
 
-    // On macOS it's common to re-create a window in the app when the dock icon is clicked and there are no other windows open.
+    // windows cannot be created before the ready event, so only listen for activate afer the app is initialized
     app.on('activate', () => {
+        // On macOS it's common to re-create a window in the app when the dock icon is clicked and there are no other windows open.
         const allWindows = BrowserWindow.getAllWindows()
         if (allWindows.length) {
             allWindows[0].focus()

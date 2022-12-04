@@ -2,10 +2,6 @@
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-
 ## Type Support For `.vue` Imports in TS
 
 Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
@@ -22,8 +18,10 @@ Convert a vite project to an electron app with no boilerplate, all electron logi
 * `npm install`
 * `npm i -D electron@latest` add electron to it as a dev dependency
 * create the electron subdirectory
-* `npm run dev` then `npm run electron:dev` to run electron app
-* Or: `npm run electron:vite`, which does both commands
+* electron will use the `main` property of `package.json` as the entry point for the main process
+* the main process runs Node.js, so it must use CommonJS
+* `npm run dev` then `npm run electron:start` to run electron app
+* Or: `npm run electron:dev`, which does both commands
 
 
 ## Build
