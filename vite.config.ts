@@ -10,6 +10,7 @@ export default defineConfig({
   // build: {
   //   outDir: 'dist'
   // },
+  //base: path.resolve(__dirname, "./dist/"), // set the base for the entire project to be the dist folder
   base: './', // prefixes all assets with ./ to work with electron's file:// protocol
   plugins: [vue()]
 })
