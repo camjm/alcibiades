@@ -32,8 +32,22 @@ async function createWindow() {
     }
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(() => {
+    // only create window when electron app is ready
+    createWindow()
 
+    // On macOS it's common to re-create a window in the app when the dock icon is clicked and there are no other windows open.
+    app.on('activate', () => {
+        const allWindows = BrowserWindow.getAllWindows()
+        if (allWindows.length) {
+            allWindows[0].focus()
+        } else {
+            createWindow()
+        }
+    })
+})
+
+// Quite when all windows are closed, except for macOS. There, it's common for apps and their munu bar to stay active until the user quites explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
     win = null
     if (process.platform !== 'darwin') app.quit()
@@ -47,11 +61,7 @@ app.on('second-instance', () => {
     }
 })
 
-app.on('activate', () => {
-    const allWindows = BrowserWindow.getAllWindows()
-    if (allWindows.length) {
-        allWindows[0].focus()
-    } else {
-        createWindow()
-    }
-})
+
+
+// Require other files contains the app's specific main process logic here
+//TODO:
